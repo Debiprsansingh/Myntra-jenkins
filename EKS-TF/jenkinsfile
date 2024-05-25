@@ -37,9 +37,7 @@ pipeline {
             steps{
                 dir('EKS-TF')
                 sh 'terraform plan'
-                    
                 }
-            }
         }
         stage('terraform apply/destroy')
         {
@@ -51,3 +49,4 @@ pipeline {
             }
         }
     }
+}
