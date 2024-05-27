@@ -12,6 +12,13 @@ pipeline{
     }
 
     stages {
+
+        stage('git checkout') {
+            steps{
+                git branch: 'main' , url: 'https://github.com/Debiprsansingh/Myntra-jenkins.git'
+            }
+
+        }
         stage('clean workspace'){
             steps{
                 cleanWs()
