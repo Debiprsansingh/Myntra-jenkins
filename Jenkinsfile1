@@ -3,6 +3,7 @@ pipeline{
   
 
      tools {
+        JDK 'jdk17'
         nodejs 'node16'
     }
 
