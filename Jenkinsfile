@@ -6,6 +6,7 @@ pipeline{
         //         git branch: 'main', url: 'https://github.com/Debiprsansingh/Myntra-jenkins.git'
         //     }
         // }
+
         stage('Terraform version'){
              steps{
                  sh 'terraform --version'
