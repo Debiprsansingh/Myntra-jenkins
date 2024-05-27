@@ -8,7 +8,7 @@ pipeline{
     }
 
     environment{
-         SCANNER_HOME = tool 'sonarqube'
+         SCANNER_HOME = tool 'sonar-scanner'
     }
 
     stages {
@@ -28,8 +28,8 @@ pipeline{
         stage("Sonarqube Analysis "){
             steps{
                 withSonarQubeEnv('sonar-server') {
-                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=myntra-clone \
-                    -Dsonar.projectKey=myntra-clone '''
+                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=myntra-1 \
+                    -Dsonar.projectKey=myntra-1 '''
                 }
             }
         }
