@@ -1,8 +1,11 @@
 pipeline{
     agent any
-    tools{
+  
+
+     tools{
         nodejs 'node16'
     }
+
     environment{
          SCANNER_HOME = tool 'sonar-scanner'
     }
