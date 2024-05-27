@@ -20,7 +20,7 @@ pipeline{
         stage("Sonarqube Analysis "){
             steps{
                 withSonarQubeEnv('sonar-server') {
-                    sh ''' $SCANNER_HOME/bin/sonarqube -Dsonar.projectName=myntra-clone \
+                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=myntra-clone \
                     -Dsonar.projectKey=myntra-clone '''
                 }
             }
