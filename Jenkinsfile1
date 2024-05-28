@@ -55,7 +55,7 @@ pipeline{
                 script{
                     withDockerRegistry(credentialsId:'docker-hub-cred', toolName:'docker'){
                         sh 'docker build -t myntra-clone .'
-                        sh 'docker myntra-clone debiprasan/myntra-clone:latest'
+                        sh 'docker tag debiprasan/myntra-clone:latest'
                         sh 'docker push debiprasan/myntra-clone:latest '
                     }
                 }
