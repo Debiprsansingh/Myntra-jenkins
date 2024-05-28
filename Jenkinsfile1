@@ -55,7 +55,7 @@ pipeline{
                 script{
                     withDockerRegistry(credentialsId:'docker-hub-cred', toolName:'docker'){
                         sh 'docker build -t myntra-clone .'
-                        sh 'docker tag myntra debiprasan/myntra-clone:latest'
+                        sh 'docker tag myntra-clone debiprasan/myntra-clone:latest'
                         sh 'docker push debiprasan/myntra-clone:latest '
                     }
                 }
@@ -68,12 +68,12 @@ pipeline{
             }
         }
 
-        // stage('Deploy to kubernets'){
-        //     steps{
-        //         script{
+        stage('Deploy to kubernets'){
+             steps{
+                 script{
         //             dir('Kubernetes') {
         //                 withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
-        //                         sh 'kubectl apply -f deployment.yml'
+                                  sh 'kubectl apply -f deployment-service.yml'
         //                         sh 'kubectl apply -f service.yml'
         //                 }   
         //             }
