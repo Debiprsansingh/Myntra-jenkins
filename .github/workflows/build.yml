@@ -1,7 +1,7 @@
 name: Build, Analyze, and Scans
 on:
-  push:
-    branches:
+ // push:
+  //  branches:
       - main
 jobs:
   build-analyze-scan:
